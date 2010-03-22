@@ -87,7 +87,7 @@
                     no      Don't add to autocomplete dictionary
             -->
       <keywords id="Header" color="#CC0000" inverted-color="#cc66ff" font-weight="bold">
-        <regex>(^#{1,6}\s+[^#]+(?:#{0,99}))\n</regex>
+        <regex>(^#{1,6}\s+[^#\n]+(?:#{0,99}))\n</regex>
         <regex>(^[-=]{2,})\n</regex>
       </keywords>
       
@@ -109,7 +109,7 @@
       </keywords>
             
       <keywords id="Inline Code" color="#939393" inverted-color="#ccc" font-weight="bold">
-        <regex>(`.*`)</regex>
+        <regex>(`[^\n#`]+`)</regex>
       </keywords>
 
       <keywords id="List Items" color="#6076FF" inverted-color="#FFA019" useforautocomplete="no">
@@ -117,10 +117,12 @@
         <regex>^\s*([0-9]{1}\..*)\n</regex>
       </keywords>
       
-      <state id="Code Block" color="#939393">
-        <begin><regex>^\s{4}.*\n</regex></begin>
-        <end><regex>(?:^[^\s])</regex></end>
-      </state>
+	<state id="Code Block" color="#939393">
+
+		<begin><regex>^\t+[^#\n]+\n</regex></begin>
+		<end><regex>(?:^[^\t])</regex></end>
+
+	</state>
 
 
       

@@ -120,7 +120,7 @@
 	<state id="Code Block" color="#939393">
 
 		<begin><regex>^\t+[^#\n]+\n</regex></begin>
-		<end><regex>(?:^[^\t])</regex></end>
+		<end><regex>\n</regex></end>
 
 	</state>
 

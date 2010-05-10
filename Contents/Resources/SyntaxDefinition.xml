@@ -91,9 +91,14 @@
         <regex>(^[-=]{2,})\n</regex>
       </keywords>
       
+            <keywords id="List Items" color="#6076FF" inverted-color="#FFA019" useforautocomplete="no">
+        <regex>^\s*([+\-*]{1}.*)\n</regex>
+        <regex>^\s*([0-9]{1}\..*)\n</regex>
+      </keywords>
+      
       <keywords id="Bold" color="#236e25" inverted-color="#91dc93" font-style="normal" font-weight="bold">
-        <regex>(\*{2}\w+.*\*{2})</regex>
-        <regex>(_{2}\w+.*_{2})</regex>
+        <regex>(\*{2}[^\n*]+\*{2})</regex>
+        <regex>(_{2}[^\n_]+_{2})</regex>
       </keywords>
       
       <!-- italic is harder than i thought...
@@ -110,11 +115,6 @@
             
       <keywords id="Inline Code" color="#939393" inverted-color="#ccc" font-weight="bold">
         <regex>(`[^\n#`]+`)</regex>
-      </keywords>
-
-      <keywords id="List Items" color="#6076FF" inverted-color="#FFA019" useforautocomplete="no">
-        <regex>^\s*([+\-*]{1}.*)\n</regex>
-        <regex>^\s*([0-9]{1}\..*)\n</regex>
       </keywords>
       
 	<state id="Code Block" color="#939393">
